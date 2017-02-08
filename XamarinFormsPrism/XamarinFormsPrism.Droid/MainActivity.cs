@@ -30,7 +30,6 @@ namespace XamarinFormsPrism.Droid
     {
         public void RegisterTypes(IUnityContainer container)
         {
-
         }
     }
 }

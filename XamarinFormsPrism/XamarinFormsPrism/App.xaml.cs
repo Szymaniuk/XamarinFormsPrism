@@ -1,5 +1,8 @@
 ﻿using Prism.Unity;
+using Xamarin.Forms.Xaml;
+using XamarinFormsPrism.Services;
 using XamarinFormsPrism.Views;
+using Microsoft.Practices.Unity;
 
 namespace XamarinFormsPrism
 {
@@ -11,12 +14,15 @@ namespace XamarinFormsPrism
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("MainPage?title=Hello SH, from XF Prism");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<SecondPage>();
+            
+            Container.RegisterType<ISomeService, SomeServiceImpl>();
         }
     }
 }
